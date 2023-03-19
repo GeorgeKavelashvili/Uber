@@ -7,7 +7,7 @@ const CovidMessage = props => {
       <Text style={styles.title}>Travel only if necessary</Text>
       <Text style={styles.text}>
         It has survived not only five centuries, but also the leap into
-        electronic typesetting, remaining essentially unchanged.
+        electronic typesetting, remaining essentially unchanged.covid is bad
       </Text>
       <Text style={styles.learnMore}>Learn more</Text>
     </View>
