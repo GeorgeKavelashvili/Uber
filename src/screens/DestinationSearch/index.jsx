@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {View, SafeAreaView} from 'react-native';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 import styles from './styles';
+import PlaceRow from './PlaceRow';
 const DestinationSearch = props => {
   const [originPlace, setOriginPlace] = useState(null);
   const [destinationPlace, setDestinationPlace] = useState(null);
@@ -20,6 +21,7 @@ const DestinationSearch = props => {
           onPress={(data, details = null) => {
             setOriginPlace({data, details});
           }}
+          enablePoweredByContainer={false}
           suppressDefaultStyles
           styles={{
             textInput: styles.textInput,
@@ -29,22 +31,22 @@ const DestinationSearch = props => {
               left: 10,
               right: 10,
             },
-            listView: {
-              position: 'absolute',
-              top: 105,
-            },
+            listView: styles.listView,
+            separator: styles.separator,
           }}
           fetchDetails
           query={{
-            key: 'AIzaSyBVX5o9bLLHAsWDZxAd7EgYGNlNyHCGt2k',
+            key: 'AIzaSyACWLYA6ckG_n-O-N9XQYAdwrcg8BaTEGM',
             language: 'en',
           }}
+          renderRow={data => <PlaceRow data={data} />}
         />
         <GooglePlacesAutocomplete
           placeholder="Where to?"
           onPress={(data, details = null) => {
             setDestinationPlace({data, details});
           }}
+          enablePoweredByContainer={false}
           suppressDefaultStyles
           styles={{
             textInput: styles.textInput,
@@ -54,6 +56,7 @@ const DestinationSearch = props => {
               left: 10,
               right: 10,
             },
+            separator: styles.separator,
           }}
           // onFail={error => console.error(error)}
           fetchDetails
@@ -61,7 +64,12 @@ const DestinationSearch = props => {
             key: 'AIzaSyBVX5o9bLLHAsWDZxAd7EgYGNlNyHCGt2k',
             language: 'en',
           }}
+          renderRow={data => <PlaceRow data={data} />}
         />
+
+        <View style={styles.circle} />
+        <View style={styles.line} />
+        <View style={styles.square} />
       </View>
     </SafeAreaView>
   );

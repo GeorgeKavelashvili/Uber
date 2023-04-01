@@ -9,6 +9,52 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#eee',
     marginVertical: 5,
+    marginLeft: 20,
+  },
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 10,
+  },
+  iconContainer: {
+    backgroundColor: '#a2a2a2',
+    padding: 5,
+    borderRadius: 50,
+    marginRight: 15,
+  },
+  locationText: {},
+  separator: {
+    backgroundColor: '#efefef',
+    height: 1,
+  },
+  listView: {
+    position: 'absolute',
+    top: 105,
+  },
+  circle: {
+    width: 5,
+    height: 5,
+    backgroundColor: 'black',
+    position: 'absolute',
+    top: 20,
+    left: 12.5,
+    borderRadius: 5,
+  },
+  line: {
+    width: 1,
+    height: 55,
+    backgroundColor: '#c4c4c4',
+    position: 'absolute',
+    top: 25,
+    left: 14.5,
+  },
+  square: {
+    width: 5,
+    height: 5,
+    backgroundColor: 'black',
+    position: 'absolute',
+    top: 80,
+    left: 12.5,
   },
 });
 
