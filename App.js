@@ -5,8 +5,8 @@ import HomeScreen from './src/screens/HomeScreen';
 import SearchResults from './src/screens/SearchResults';
 export default class App extends React.Component {
   render() {
-    // return <DestinationSearch />;
+    return <DestinationSearch />;
     // return <HomeScreen />;
-    return <SearchResults />;
+    // return <SearchResults />;
   }
 }

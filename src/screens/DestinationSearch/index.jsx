@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, TextInput, SafeAreaView, ScrollView} from 'react-native';
+import {View, SafeAreaView} from 'react-native';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 import styles from './styles';
 const DestinationSearch = props => {
@@ -16,12 +16,23 @@ const DestinationSearch = props => {
     <SafeAreaView>
       <View style={styles.container}>
         <GooglePlacesAutocomplete
-          placeholder="From"
+          placeholder="Where From?"
           onPress={(data, details = null) => {
             setOriginPlace({data, details});
           }}
+          suppressDefaultStyles
           styles={{
             textInput: styles.textInput,
+            container: {
+              position: 'absolute',
+              top: 0,
+              left: 10,
+              right: 10,
+            },
+            listView: {
+              position: 'absolute',
+              top: 105,
+            },
           }}
           fetchDetails
           query={{
@@ -34,8 +45,15 @@ const DestinationSearch = props => {
           onPress={(data, details = null) => {
             setDestinationPlace({data, details});
           }}
+          suppressDefaultStyles
           styles={{
             textInput: styles.textInput,
+            container: {
+              position: 'absolute',
+              top: 55,
+              left: 10,
+              right: 10,
+            },
           }}
           // onFail={error => console.error(error)}
           fetchDetails
